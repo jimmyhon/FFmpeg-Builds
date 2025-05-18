@@ -14,7 +14,7 @@ ffbuild_dockerbuild() {
     local myconf=(
         --prefix="$FFBUILD_PREFIX"
         -Ddefault_library=shared
-        -Dudev=false
+        -Dudev=true
         -Dcairo-tests=disabled
         -Dvalgrind=disabled
         -Dexynos=disabled
