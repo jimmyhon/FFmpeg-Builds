@@ -34,8 +34,8 @@ cat <<EOF >"$BUILD_SCRIPT"
 
     curl -LO http://ftp.us.debian.org/debian/pool/main/s/systemd/libudev-dev_252.36-1~deb12u1_arm64.deb
     ar -x libudev-dev_252.36-1~deb12u1_arm64.deb
-    ln -s . usr
-    #ln -s .. lib/aarch64-linux-gnu
+    ln -s /opt/ffbuild usr
+    ln -s .. usr/lib/aarch64-linux-gnu
     tar -xf data.tar.xz ./usr/lib ./usr/include
 
     git clone --filter=blob:none --branch='$GIT_BRANCH' '$FFMPEG_REPO' ffmpeg
