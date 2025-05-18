@@ -32,6 +32,10 @@ cat <<EOF >"$BUILD_SCRIPT"
     cd /ffbuild
     rm -rf ffmpeg prefix
 
+    curl -LO http://ftp.us.debian.org/debian/pool/main/s/systemd/libudev-dev_252.36-1~deb12u1_arm64.deb
+    ar -x libudev-dev_252.36-1~deb12u1_arm64.deb
+    tar -C / -xf data.tar.xz ./usr/lib ./usr/include
+
     git clone --filter=blob:none --branch='$GIT_BRANCH' '$FFMPEG_REPO' ffmpeg
     cd ffmpeg
 
